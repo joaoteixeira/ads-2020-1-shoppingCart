@@ -1,2 +1,3 @@
-# ads-2020-1-shoppingCart
-Wigny e Caio
+# Shopping Cart
+
+Caio Roberto e Wígny Almeida
