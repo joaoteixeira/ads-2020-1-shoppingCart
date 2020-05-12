@@ -1,9 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('title', 'Sobre')
 
 @section('content')
-<div class="title m-b-md">
-    Sobre
-</div>
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 @endsection
