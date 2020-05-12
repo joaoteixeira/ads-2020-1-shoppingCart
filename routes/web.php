@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', fn () => view('welcome'));
+Route::get('/', function () {
+  $usuarios = \App\Usuario::all();
+  return $usuarios;
+  // view('welcome')
+});
 
 Route::get('/sobre', fn () => view('sobre'));
