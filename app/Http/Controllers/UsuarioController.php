@@ -14,9 +14,11 @@ class UsuarioController extends Controller
      */
     public function index()
     {
+        $usuarios = Usuario::All();
+        
         return view(
             'usuario.index', 
-            array('usuarios' => Usuario::All()),
+            array('usuarios' => $usuarios),
         );
     }
 
@@ -62,7 +64,12 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $usuario = Usuario::find($id);
+        
+        return view(
+            'usuario.edit', 
+            array('usuario' => $usuario)
+        );
     }
 
     /**
@@ -74,7 +81,10 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $usuario = Usuario::find($id);
+        $usuario->update($request->all());
+
+        return redirect('usuarios')->with('status', "Usuário {$usuario->nome} atualizado com sucesso!");
     }
 
     /**

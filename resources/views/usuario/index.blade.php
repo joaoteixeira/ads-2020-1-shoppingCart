@@ -28,6 +28,7 @@
         <th>Nome</th>
         <th>E-mail</th>
         <th>Telefone</th>
+        <th>Opções</th>
       </tr>
     </thead>
     <tbody>
@@ -37,6 +38,7 @@
         <td>{{ $usuario->nome }}</td>
         <td>{{ $usuario->email }}</td>
         <td>{{ $usuario->telefone }}</td>
+        <td> <a href="usuarios/{{ $usuario->id }}/edit">Editar</a> </td>
       </tr>
       @endforeach
     </tbody>
