@@ -15,7 +15,7 @@ class UsuarioController extends Controller
     public function index()
     {
         return view(
-            'usuarios.index', 
+            'usuario.index', 
             array('usuarios' => Usuario::All()),
         );
     }
@@ -27,7 +27,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        return view('usuario.create');
     }
 
     /**
@@ -38,7 +38,9 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usuario = Usuario::create($request->all());
+
+        return redirect('usuarios')->with('status', "Usuário {$usuario->nome} cadastrado com sucesso!");
     }
 
     /**
