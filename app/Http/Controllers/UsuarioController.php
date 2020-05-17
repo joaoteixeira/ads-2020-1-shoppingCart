@@ -14,10 +14,10 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios = Usuario::All();
-        
+        $usuarios = Usuario::orderBy('id', 'ASC')->get();
+
         return view(
-            'usuario.index', 
+            'usuario.index',
             array('usuarios' => $usuarios),
         );
     }
@@ -65,9 +65,9 @@ class UsuarioController extends Controller
     public function edit($id)
     {
         $usuario = Usuario::find($id);
-        
+
         return view(
-            'usuario.edit', 
+            'usuario.edit',
             array('usuario' => $usuario)
         );
     }
@@ -87,6 +87,16 @@ class UsuarioController extends Controller
         return redirect('usuarios')->with('status', "Usuário {$usuario->nome} atualizado com sucesso!");
     }
 
+    public function delete($id)
+    {
+        $usuario = Usuario::find($id);
+
+        return view(
+            'usuario.delete',
+            array('usuario' => $usuario)
+        );
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -95,6 +105,9 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $usuario = Usuario::find($id);
+        $usuario->delete();
+
+        return redirect('usuarios')->with('status', "Usuário {$usuario->nome} apagado com sucesso!");
     }
 }

@@ -7,7 +7,7 @@
   <h1 class="h2">Cadastrar Usuário</h1>
 </div>
 
-<form action="{{ route('usuarios.store') }}" method="post" class="needs-validation" novalidate>
+<form action="{{ route('usuarios.store') }}" method="post" class="needs-validation">
   @csrf
   <div class="mb-3">
     <label for="nome">Nome</label>

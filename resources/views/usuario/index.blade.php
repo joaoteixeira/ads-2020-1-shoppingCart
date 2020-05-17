@@ -38,7 +38,10 @@
         <td>{{ $usuario->nome }}</td>
         <td>{{ $usuario->email }}</td>
         <td>{{ $usuario->telefone }}</td>
-        <td> <a href="usuarios/{{ $usuario->id }}/edit">Editar</a> </td>
+        <td>
+          <a href="{{ route('usuarios.edit', $usuario->id) }}">Editar</a>
+          <a href="{{ route('usuarios.delete', $usuario->id) }}">Excluir</a>
+        </td>
       </tr>
       @endforeach
     </tbody>
