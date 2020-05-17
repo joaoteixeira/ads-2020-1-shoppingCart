@@ -18,4 +18,4 @@ Route::get('/', fn () => view('welcome'));
 Route::get('/sobre', fn () => view('sobre'));
 
 Route::resource('/usuarios', 'UsuarioController');
-Route::get('usuarios/{usuario}/delete', 'UsuarioController@delete')->name('usuarios.delete');
+Route::get('/usuarios/{usuario}/delete', 'UsuarioController@delete')->name('usuarios.delete');

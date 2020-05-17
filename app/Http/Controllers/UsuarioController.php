@@ -87,6 +87,12 @@ class UsuarioController extends Controller
         return redirect('usuarios')->with('status', "Usuário {$usuario->nome} atualizado com sucesso!");
     }
 
+    /**
+     * Show the form for delete the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function delete($id)
     {
         $usuario = Usuario::find($id);
@@ -108,6 +114,6 @@ class UsuarioController extends Controller
         $usuario = Usuario::find($id);
         $usuario->delete();
 
-        return redirect('usuarios')->with('status', "Usuário {$usuario->nome} apagado com sucesso!");
+        return redirect('usuarios')->with('status', "Usuário {$usuario->nome} excluído com sucesso!");
     }
 }
