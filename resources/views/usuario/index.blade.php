@@ -7,7 +7,6 @@
   <h1 class="h2">Listagem de Usuários</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
-      <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Share</button> -->
       <a type="button" class="btn btn-sm btn-outline-secondary" href="{{ route('usuarios.create') }}">Novo usuário</a>
     </div>
   </div>
@@ -20,6 +19,7 @@
 </div>
 @endif
 
+@if(count($usuarios))
 <div class="table-responsive">
   <table class="table table-striped table-sm">
     <thead>
@@ -38,10 +38,17 @@
         <td>{{ $usuario->nome }}</td>
         <td>{{ $usuario->email }}</td>
         <td>{{ $usuario->telefone }}</td>
-        <td> <a href="usuarios/{{ $usuario->id }}/edit">Editar</a> </td>
+        <td>
+          <a href="{{ route('usuarios.edit', $usuario->id) }}">Editar</a>
+          <a href="{{ route('usuarios.delete', $usuario->id) }}">Excluir</a>
+        </td>
       </tr>
       @endforeach
     </tbody>
   </table>
 </div>
+@else
+<p class="lead">Nenhum usuário encontrado</p>
+@endif
+
 @endsection
