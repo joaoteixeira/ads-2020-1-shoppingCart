@@ -8,6 +8,5 @@ class Produto extends Model
 {
     protected $primaryKey = 'id';
     protected $table = 'produtos';
-
-    public $timestamps = false;
+    protected $fillable = ['descricao', 'valor', 'imagem', 'estoque'];
 }
