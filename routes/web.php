@@ -19,3 +19,6 @@ Route::get('/sobre', fn () => view('sobre'));
 
 Route::resource('/usuarios', 'UsuarioController');
 Route::get('/usuarios/{usuario}/delete', 'UsuarioController@delete')->name('usuarios.delete');
+
+Route::resource('/produtos', 'ProdutoController');
+Route::get('/produtos/{produto}/delete', 'ProdutoController@delete')->name('produtos.delete');
