@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Produto;
+use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
 {
@@ -42,7 +42,7 @@ class ProdutoController extends Controller
     {
         $produto = Produto::create($request->all());
 
-        return redirect('produtos')->with('status', "Produto {$produto->nome} cadastrado com sucesso!");
+        return redirect('produtos')->with('status', "Produto {$produto->descricao} cadastrado com sucesso!");
     }
 
     /**
@@ -84,7 +84,7 @@ class ProdutoController extends Controller
         $produto = Produto::find($id);
         $produto->update($request->all());
 
-        return redirect('produtos')->with('status', "Produto {$produto->nome} atualizado com sucesso!");
+        return redirect('produtos')->with('status', "Produto {$produto->descricao} atualizado com sucesso!");
     }
 
     /**
@@ -114,6 +114,6 @@ class ProdutoController extends Controller
         $produto = Produto::find($id);
         $produto->delete();
 
-        return redirect('produtos')->with('status', "Produto {$produto->nome} excluído com sucesso!");
+        return redirect('produtos')->with('status', "Produto {$produto->descricao} excluído com sucesso!");
     }
 }
