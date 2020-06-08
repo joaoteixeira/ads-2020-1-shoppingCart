@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Usuario;
+use App\Produto;
 use Illuminate\Http\Request;
 
-class UsuarioController extends Controller
+class ProdutoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,11 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios = Usuario::orderBy('id', 'ASC')->get();
+        $produtos = Produto::orderBy('id', 'ASC')->get();
 
         return view(
-            'usuario.index',
-            array('usuarios' => $usuarios),
+            'produto.index',
+            array('produtos' => $produtos),
         );
     }
 
@@ -29,7 +29,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        return view('usuario.create');
+        return view('produto.create');
     }
 
     /**
@@ -40,9 +40,9 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        $usuario = Usuario::create($request->all());
+        $produto = Produto::create($request->all());
 
-        return redirect('usuarios')->with('status', "Usuário {$usuario->nome} cadastrado com sucesso!");
+        return redirect('produtos')->with('status', "Produto {$produto->descricao} cadastrado com sucesso!");
     }
 
     /**
@@ -64,11 +64,11 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        $usuario = Usuario::find($id);
+        $produto = Produto::find($id);
 
         return view(
-            'usuario.edit',
-            array('usuario' => $usuario)
+            'produto.edit',
+            array('produto' => $produto)
         );
     }
 
@@ -81,10 +81,10 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $usuario = Usuario::find($id);
-        $usuario->update($request->all());
+        $produto = Produto::find($id);
+        $produto->update($request->all());
 
-        return redirect('usuarios')->with('status', "Usuário {$usuario->nome} atualizado com sucesso!");
+        return redirect('produtos')->with('status', "Produto {$produto->descricao} atualizado com sucesso!");
     }
 
     /**
@@ -95,11 +95,11 @@ class UsuarioController extends Controller
      */
     public function delete($id)
     {
-        $usuario = Usuario::find($id);
+        $produto = Produto::find($id);
 
         return view(
-            'usuario.delete',
-            array('usuario' => $usuario)
+            'produto.delete',
+            array('produto' => $produto)
         );
     }
 
@@ -111,9 +111,9 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-        $usuario = Usuario::find($id);
-        $usuario->delete();
+        $produto = Produto::find($id);
+        $produto->delete();
 
-        return redirect('usuarios')->with('status', "Usuário {$usuario->nome} excluído com sucesso!");
+        return redirect('produtos')->with('status', "Produto {$produto->descricao} excluído com sucesso!");
     }
 }

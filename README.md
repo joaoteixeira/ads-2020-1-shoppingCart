@@ -1,4 +1,5 @@
 # [Shopping Cart](https://shopping-cart-ifro.herokuapp.com/)
+![Laravel](https://github.com/joaoteixeira/ads-2020-1-shoppingCart/workflows/Laravel/badge.svg)
 
 ## Aplicação web de carrinho de compras do usuário.
 ### Caio Roberto e Wígny Almeida
