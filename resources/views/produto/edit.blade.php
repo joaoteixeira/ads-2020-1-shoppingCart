@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-  <h1 class="h2">Editar Produto</h1>
+  <h1 class="h2">Editar produto</h1>
 </div>
 
 <form action="{{ route('produtos.update', $produto->id) }}" method="post" class="needs-validation">
