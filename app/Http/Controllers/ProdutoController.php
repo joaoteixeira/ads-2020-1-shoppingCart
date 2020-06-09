@@ -42,7 +42,7 @@ class ProdutoController extends Controller
     {
         $produto = Produto::create($request->all());
 
-        return redirect('produtos')->with('status', "Produto {$produto->descricao} cadastrado com sucesso!");
+        return redirect('produtos')->with('status', "Produto {$produto->produto} cadastrado com sucesso!");
     }
 
     /**
@@ -84,7 +84,7 @@ class ProdutoController extends Controller
         $produto = Produto::find($id);
         $produto->update($request->all());
 
-        return redirect('produtos')->with('status', "Produto {$produto->descricao} atualizado com sucesso!");
+        return redirect('produtos')->with('status', "Produto {$produto->produto} atualizado com sucesso!");
     }
 
     /**
@@ -114,6 +114,6 @@ class ProdutoController extends Controller
         $produto = Produto::find($id);
         $produto->delete();
 
-        return redirect('produtos')->with('status', "Produto {$produto->descricao} excluído com sucesso!");
+        return redirect('produtos')->with('status', "Produto {$produto->produto} excluído com sucesso!");
     }
 }
