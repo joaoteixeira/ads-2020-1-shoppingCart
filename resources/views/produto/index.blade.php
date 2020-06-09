@@ -28,6 +28,7 @@
               <p class="card-text">{{ $produto->descricao }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-secondary" href="{{ route('produtos.show', $produto->id) }}">Visualizar</a>
                   <a class="btn btn-sm btn-outline-secondary" href="{{ route('produtos.edit', $produto->id) }}">Editar</a>
                   <a class="btn btn-sm btn-outline-secondary" href="{{ route('produtos.delete', $produto->id) }}">Excluir</a>
                 </div>
