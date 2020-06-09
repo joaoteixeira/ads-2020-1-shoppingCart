@@ -5,6 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
+
+  <meta property="og:title" content="@yield('title')">
+  <meta property="og:description" content="@yield('description')">
+  <meta property="og:image" content="@yield('image')">
+
   <title>@yield('title')</title>
 
 

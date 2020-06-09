@@ -1,6 +1,9 @@
 @extends('layouts.dashboard')
 
 @section('title', $produto->produto)
+@section('icon', $produto->imagem)
+@section('description', $produto->descricao)
+@section('image', $produto->imagem)
 
 @section('content')
 <div class="container">
