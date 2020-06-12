@@ -10,8 +10,13 @@
 <form action="{{ route('produtos.store') }}" method="post" class="needs-validation">
   @csrf
   <div class="mb-3">
-    <label for="descricao">Descrição</label>
-    <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Violão usado" required>
+    <label for="produto">Produto</label>
+    <input type="text" class="form-control" id="produto" name="produto" placeholder="Violão usado" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="descricao">Descrição <span class="text-muted">(Opcional)</span></label>
+    <textarea class="form-control" id="descricao" name="descricao" placeholder="Descrição" rows="3"></textarea>
   </div>
 
   <div class="mb-3">

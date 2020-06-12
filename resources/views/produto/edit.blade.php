@@ -15,8 +15,13 @@
     <img src="{{ $produto->imagem }}" class="align-self-start mr-3" alt="{{ $produto->descricao }}" width="200">
     <div class="media-body">
       <div class="mb-3">
-        <label for="descricao">Descrição</label>
-        <input type="text" class="form-control" id="descricao" name="descricao" placeholder="" value="{{ $produto->descricao }}" required>
+        <label for="produto">Produto</label>
+        <input type="text" class="form-control" id="produto" name="produto" placeholder="" value="{{ $produto->produto }}" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="descricao">Descrição <span class="text-muted">(Opcional)</span></label>
+        <textarea class="form-control" id="descricao" name="descricao" placeholder="" rows="3">{{ $produto->descricao }}</textarea>
       </div>
 
       <div class="mb-3">
