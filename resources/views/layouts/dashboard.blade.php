@@ -7,12 +7,11 @@
   <meta property="og:description" content="@yield('description')">
   <meta property="og:image" content="@yield('image')">
   <meta property="og:title" content="@yield('title')">
-  <meta name="author" content="{{ env('GIT_AUTHOR_NAME', 'Laravel') }}">
 
   <title>@yield('title')</title>
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+  <link href="https://getbootstrap.com/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
   <meta name="theme-color" content="#563d7c">
 
@@ -33,8 +32,7 @@
     }
   </style>
   <!-- Custom styles for this template -->
-  <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
-
+  <link href="https://getbootstrap.com/docs/4.5/examples/dashboard/dashboard.css" rel="stylesheet">
 </head>
 
 <body>
@@ -130,33 +128,19 @@
       </nav>
 
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">@yield('title')</h1>
-          <!-- <div class="btn-toolbar mb-2 mb-md-0">
-            <div class="btn-group mr-2">
-              <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-            </div>
-            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-              <span data-feather="calendar"></span>
-              This week
-            </button>
-          </div> -->
-        </div>
-
         @yield('content')
       </main>
+
     </div>
   </div>
-  <script src="{{ asset('js/jquery-3.4.1.slim.min.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script>
-    window.jQuery || document.write('<script src="{{ asset("js\/jquery-3.4.1.slim.min.js") }}"><\/script>')
+    window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')
   </script>
-  <script src="{{ asset('js/bootstrap.bundle.min.js') }}"> </script>
+  <script src="https://getbootstrap.com/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script> -->
-  <script src="{{ asset('js/dashboard.js') }}"> </script>
-
+  <!-- <script src="https://getbootstrap.com/docs/4.5/examples/dashboard/dashboard.js"></script> -->
 </body>
 
 </html>
