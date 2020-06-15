@@ -4,21 +4,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+
+  @if (@yield('description'))
+  <meta property="og:description" content="@yield('description')">
+  @endif
+
+  @if (@yield('image'))
+  <meta property="og:image" content="@yield('image')">
+  @endif
 
   <meta property="og:title" content="@yield('title')">
-  <meta property="og:description" content="@yield('description')">
-  <meta property="og:image" content="@yield('image')">
 
   <title>@yield('title')</title>
-
-
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/dashboard/">
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
-  <!-- <link rel="icon" href="favicon.png"> -->
   <meta name="theme-color" content="#563d7c">
 
   <style>
@@ -43,8 +44,11 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+  <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Company name</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
@@ -55,8 +59,8 @@
 
   <div class="container-fluid">
     <div class="row">
-      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-        <div class="sidebar-sticky">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="sidebar-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link active" href="#">
@@ -131,10 +135,20 @@
         </div>
       </nav>
 
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 class="h2">@yield('title')</h1>
-        </div> -->
+          <!-- <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+              <span data-feather="calendar"></span>
+              This week
+            </button>
+          </div> -->
+        </div>
 
         @yield('content')
       </main>
