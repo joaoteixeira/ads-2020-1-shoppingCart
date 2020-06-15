@@ -4,16 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  @if (@yield('description'))
   <meta property="og:description" content="@yield('description')">
-  @endif
-
-  @if (@yield('image'))
   <meta property="og:image" content="@yield('image')">
-  @endif
-
   <meta property="og:title" content="@yield('title')">
+  <meta name="author" content="{{ env('GIT_AUTHOR_NAME', 'Laravel') }}">
 
   <title>@yield('title')</title>
 
