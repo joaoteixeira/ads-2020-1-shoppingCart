@@ -22,3 +22,4 @@ Route::get('/usuarios/{usuario}/delete', 'UsuarioController@delete')->name('usua
 Route::resource('/produtos', 'ProdutoController');
 Route::resource('/usuarios', 'UsuarioController');
 Route::resource('/usuarios/{usuario}/carrinho', 'CarrinhoController');
+Route::resource('/usuarios/{usuario}/compra', 'CompraController');

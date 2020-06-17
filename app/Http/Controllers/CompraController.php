@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Compra;
+use App\Produto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class CarrinhoController extends Controller
+class CompraController extends Controller
 {
   /**
    * Display a listing of the resource.
@@ -14,14 +16,15 @@ class CarrinhoController extends Controller
    */
   public function index(int $usuario)
   {
-    $compras = Compra::where('usuario_id', $usuario)
-      ->where('finalizado', false)
-      ->with('produto')
-      ->get();
+    $compras = fn ($compra) => $compra
+      ->where('usuario_id', $usuario)
+      ->where('finalizado', true);
+
+    $produtos = Produto::whereHas('compras', $compras)->get();
 
     return view(
-      'carrinho.index',
-      array('compras' => $compras),
+      'compra.index',
+      array('produtos' => $produtos),
     );
   }
 
@@ -42,6 +45,22 @@ class CarrinhoController extends Controller
    */
   public function store(Request $request)
   {
+    $transaction = function () use ($request) {
+      $compra = Compra::find($request->compra);
+      $produto = Produto::find($compra->produto_id);
+
+      $compra->update([
+        'finalizado' => true
+      ]);
+
+      $produto->update([
+        'estoque' => $produto->estoque - $compra->quantidade
+      ]);
+
+      return $compra->id;
+    };
+
+    return DB::transaction($transaction);
   }
 
   /**

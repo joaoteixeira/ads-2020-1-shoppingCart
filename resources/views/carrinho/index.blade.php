@@ -10,7 +10,7 @@
 @if(count($compras))
 <div class="table-responsive">
   <!-- TODO: usuario -->
-  <form action="{{ route('carrinho.store', 1) }}" method="post">
+  <form action="{{ route('compra.store', 1) }}" method="post">
     @csrf
     <table class="table table-striped" id="table">
       <thead>
