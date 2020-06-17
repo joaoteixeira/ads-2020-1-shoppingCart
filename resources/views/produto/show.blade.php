@@ -24,7 +24,11 @@
       <div class="card mt-4">
         <img class="card-img-top img-fluid" src="{{ $produto->imagem }}" alt="{{ $produto->produto }}" style="max-height: 500px; object-fit: cover;">
         <div class="card-body">
-          <h3 class="card-title">{{ $produto->produto }}</h3>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
+            <h3 class="card-title">{{ $produto->produto }}</h3>
+            <!-- TODO: add ao carrinho -->
+            <a href="{{ route('carrinho.store', 5) }}" class="btn btn-primary">Adicionar ao carrinho</a>
+          </div>
           <h4>R${{ $produto->valor }}</h4>
           <p class="card-text">{{ $produto->descricao }}</p>
           <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span> 4.0 stars

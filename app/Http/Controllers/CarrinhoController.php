@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Compra;
 use App\Produto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CarrinhoController extends Controller
 {
@@ -49,6 +50,22 @@ class CarrinhoController extends Controller
    */
   public function store(Request $request)
   {
+    $transaction = function () use ($request) {
+      $compra = Compra::find($request->compra);
+      $produto = Produto::find($compra->produto_id);
+
+      $compra->update([
+        'finalizado' => true
+      ]);
+
+      $produto->update([
+        'estoque' => $produto->estoque - $compra->quantidade
+      ]);
+
+      return $compra->id;
+    };
+
+    return DB::transaction($transaction);
   }
 
   /**
@@ -79,16 +96,6 @@ class CarrinhoController extends Controller
    * @return \Illuminate\Http\Response
    */
   public function update(Request $request, $id)
-  {
-  }
-
-  /**
-   * Show the form for delete the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function delete($id)
   {
   }
 
