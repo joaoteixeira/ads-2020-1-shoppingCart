@@ -15,7 +15,8 @@ class CreateProdutos extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
-            $table->string('descricao', 150);
+            $table->string('produto', 150);
+            $table->text('descricao');
             $table->double('valor', 12, 2);
             $table->text('imagem')->default('/images/404.jpg');
             $table->integer('estoque')->default(1);

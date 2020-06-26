@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Compra;
 use App\Produto;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class CompraController extends Controller
 {
