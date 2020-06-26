@@ -26,8 +26,21 @@
         <div class="card-body">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
             <h3 class="card-title">{{ $produto->produto }}</h3>
-            <!-- TODO: add ao carrinho -->
-            <a href="{{ route('carrinho.store', 5) }}" class="btn btn-primary">Adicionar ao carrinho</a>
+
+            @if($produto->estoque)
+            <!-- TODO: usuario -->
+            <form action="{{ route('carrinho.store', 2) }}" method="post">
+              @csrf
+              <input type="number" name="produto" value="{{ $produto->id }}" hidden>
+
+              <div class="input-group mb-3">
+                <input type="number" class="form-control" name="quantidade" value="1" min="1" max="{{ $produto->estoque }}" width="60px">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="submit">Adicionar ao carrinho</button>
+                </div>
+              </div>
+            </form>
+            @endif
           </div>
           <h4>R${{ $produto->valor }}</h4>
           <p class="card-text">{{ $produto->descricao }}</p>

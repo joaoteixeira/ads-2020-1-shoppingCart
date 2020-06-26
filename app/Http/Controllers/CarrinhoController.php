@@ -37,11 +37,19 @@ class CarrinhoController extends Controller
   /**
    * Store a newly created resource in storage.
    *
+   * @param  int  $id
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(Request $request)
+  public function store(int $usuario, Request $request)
   {
+    $compra = Compra::create([
+      'usuario_id' => $usuario,
+      'produto_id' => $request->produto,
+      'quantidade' => $request->quantidade,
+    ]);
+
+    return $compra;
   }
 
   /**
