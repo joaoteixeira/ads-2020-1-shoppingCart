@@ -45,22 +45,23 @@ class CompraController extends Controller
    */
   public function store(Request $request)
   {
-    $transaction = function () use ($request) {
-      $compra = Compra::find($request->compra);
+    $compras = Compra::find($request->compras);
+
+    foreach ($compras as $compra) {
       $produto = Produto::find($compra->produto_id);
 
-      $compra->update([
-        'finalizado' => true
-      ]);
+      if ($compra->quantidade <= $produto->estoque) {
+        $compra->update([
+          'finalizado' => true
+        ]);
 
-      $produto->update([
-        'estoque' => $produto->estoque - $compra->quantidade
-      ]);
+        $produto->update([
+          'estoque' => $produto->estoque - $compra->quantidade
+        ]);
+      }
+    }
 
-      return $compra->id;
-    };
-
-    return DB::transaction($transaction);
+    return $compras;
   }
 
   /**
