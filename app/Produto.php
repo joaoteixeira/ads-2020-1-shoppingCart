@@ -19,4 +19,9 @@ class Produto extends Model
     {
         $this->attributes['imagem'] = $value ?: '/images/404.jpg';
     }
+
+    public function compras()
+    {
+        return $this->hasMany('App\Compra');
+    }
 }
