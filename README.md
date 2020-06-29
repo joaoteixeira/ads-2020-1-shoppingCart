@@ -13,13 +13,13 @@ Funcionalidades:
 * Remover produto do carrinho do usuário;
 * Finalizar carrinho;
 
-Diagramas do banco de dados
+Diagramas do banco de dados:
 
 <img src="https://raw.githubusercontent.com/Wigny/php-shopping-cart/dev/Diagramas/phpShoppingCartDER.png">
-<p>Diagrama Entidade Relacionamento</p>
+Diagrama Entidade Relacionamento
 
-<img src="https://raw.githubusercontent.com/Wigny/php-shopping-cart/dev/Diagramas/phpShoppingCartDER.png">
-<p>Modelo Lógico</p>
+<p><img src="https://raw.githubusercontent.com/Wigny/php-shopping-cart/dev/Diagramas/phpShoppingCartDER.png"></p>
+Modelo Lógico
 
 <p>Veja esse o <a href="https://shopping-cart-ifro.herokuapp.com">PHP Shopping Cart</a> em ação
 <p>Veja mais sobre o <a href="https://www.youtube.com/watch?v=bZSJWz3Z6zs">projeto</a></p>
