@@ -6,21 +6,25 @@
 
 
 ## Funcionalidades:
-- Cadastro de usuário;
-- Cadastro de carrinho de usuário;
-- Cadastro de produto com valor, descrição e imagem;
-- Adicionar produto ao carrinho do usuário com a quantidade;
-- Remover produto do carrinho do usuário;
-- Finalizar carrinho.
+- [x] Cadastro de usuário;
+- [x] Cadastro de carrinho de usuário;
+- [x] Cadastro de produto com valor, descrição e imagem;
+- [x] Adicionar produto ao carrinho do usuário com a quantidade;
+- [ ] Remover produto do carrinho do usuário;
+- [ ] Finalizar carrinho.
 
 ## Diagramas do banco de dados:
 
 Diagrama Entidade Relacionamento
-<p><img src="https://raw.githubusercontent.com/Wigny/php-shopping-cart/dev/Diagramas/phpShoppingCartDER.png"></p>
+
+![Diagrama Entidade Relacionamento](https://raw.githubusercontent.com/Wigny/php-shopping-cart/dev/Diagramas/phpShoppingCartDER.png)
 
 Modelo Lógico
-<p><img src="https://raw.githubusercontent.com/Wigny/php-shopping-cart/dev/Diagramas/phpShoppingCartDER.png"></p>
 
-<p>Veja esse o <a href="https://shopping-cart-ifro.herokuapp.com">PHP Shopping Cart</a> em ação.</p>
-<p>Veja mais sobre o <a href="https://www.youtube.com/watch?v=bZSJWz3Z6zs">projeto.</a></p>
-<p>Veja mais sobre o framework <a href="https://pics.me.me/you-guys-always-act-like-youre-better-than-me-php-42180337.png">Larevel.</a></p>
+![Modelo Lógico](https://raw.githubusercontent.com/Wigny/php-shopping-cart/dev/Diagramas/phpShoppingCartDER.png)
+
+Veja esse o [PHP Shopping Cart](https://shopping-cart-ifro.herokuapp.com) em ação.
+
+Veja mais sobre o [projeto](https://www.youtube.com/watch?v=bZSJWz3Z6zs).
+
+Veja mais sobre o framework [Larevel](https://pics.me.me/you-guys-always-act-like-youre-better-than-me-php-42180337.png).

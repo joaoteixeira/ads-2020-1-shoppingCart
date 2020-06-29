@@ -8,9 +8,6 @@ create table usuarios (
   updated_at timestamp(0)
 );
 
-alter table
-  usuarios owner to zfnwdwcdvwdzwh;
-
 -- auto-generated definition
 create table produtos (
   id bigserial not null constraint produtos_pkey primary key,
@@ -22,9 +19,6 @@ create table produtos (
   updated_at timestamp(0),
   descricao text
 );
-
-alter table
-  produtos owner to zfnwdwcdvwdzwh;
 
 -- auto-generated definition
 create table compras (
@@ -38,12 +32,8 @@ create table compras (
   updated_at timestamp(0)
 );
 
-alter table
-  compras owner to zfnwdwcdvwdzwh;
-
-INSERT INTO public.usuarios (id, nome, email, telefone, created_at, updated_at) VALUES (2, 'Caio', 'caio@email.com', '99', '2020-06-07 20:50:38', '2020-06-07 20:50:38');
-INSERT INTO public.usuarios (id, nome, email, telefone, created_at, updated_at) VALUES (5, 'Pão de queijo', 'pao@queijo.com', '77878', null, null);
 INSERT INTO public.usuarios (id, nome, email, telefone, created_at, updated_at) VALUES (1, 'Wígny', 'wignyalmeida@gmail.com', '(69) 99330-4603', '2020-06-10 15:15:45', '2020-06-10 15:15:49');
+INSERT INTO public.usuarios (id, nome, email, telefone, created_at, updated_at) VALUES (2, 'Caio', 'caio@email.com', '99', '2020-06-07 20:50:38', '2020-06-07 20:50:38');
 
 INSERT INTO public.produtos (id, produto, valor, imagem, estoque, created_at, updated_at, descricao) VALUES (2, 'Pedro Lucas', 1500, 'https://avatars1.githubusercontent.com/u/48169636?s=460&u=461699e370ca12060d2bdf4aa82ca3a76bd31b9e&v=4', 4, null, '2020-06-17 03:47:05', null);
 INSERT INTO public.produtos (id, produto, valor, imagem, estoque, created_at, updated_at, descricao) VALUES (5, 'Ivanderson Carlos', 350000, 'https://images.passeidireto.com/user_picture/3676094/picture/67c40040-9063-45e4-a97c-8e8056f17947/picture.large', 20, '2020-06-08 00:55:19', '2020-06-09 00:09:30', 'Ivanderson olhando para o cara que está olhando ele nesse exato momento.');
