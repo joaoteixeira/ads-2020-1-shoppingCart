@@ -29,7 +29,7 @@
 
             @if($produto->estoque)
             <!-- TODO: usuario -->
-            <form action="{{ route('carrinho.store', 2) }}" method="post">
+            <form action="{{ route('carrinho.store', 1) }}" method="post">
               @csrf
               <input type="number" name="produto" value="{{ $produto->id }}" hidden>
 

@@ -43,13 +43,13 @@ class CarrinhoController extends Controller
    */
   public function store(int $usuario, Request $request)
   {
-    $compra = Compra::create([
+    Compra::create([
       'usuario_id' => $usuario,
       'produto_id' => $request->produto,
       'quantidade' => $request->quantidade,
     ]);
 
-    return $compra;
+    return $this->index($usuario);
   }
 
   /**
