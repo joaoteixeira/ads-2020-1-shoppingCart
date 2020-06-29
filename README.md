@@ -21,7 +21,7 @@ Diagrama Entidade Relacionamento
 
 Modelo Lógico
 
-![Modelo Lógico](https://raw.githubusercontent.com/Wigny/php-shopping-cart/dev/Diagramas/phpShoppingCartDER.png)
+![Modelo Lógico](https://raw.githubusercontent.com/Wigny/php-shopping-cart/dev/Diagramas/phpShoppingCartLogico.png)
 
 Veja esse o [PHP Shopping Cart](https://shopping-cart-ifro.herokuapp.com) em ação.
 
