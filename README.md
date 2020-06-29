@@ -23,8 +23,3 @@ Modelo Lógico
 
 ![Modelo Lógico](https://raw.githubusercontent.com/Wigny/php-shopping-cart/dev/Diagramas/phpShoppingCartLogico.png)
 
-Veja esse o [PHP Shopping Cart](https://shopping-cart-ifro.herokuapp.com) em ação.
-
-Veja mais sobre o [projeto](https://www.youtube.com/watch?v=bZSJWz3Z6zs).
-
-Veja mais sobre o framework [Larevel](https://pics.me.me/you-guys-always-act-like-youre-better-than-me-php-42180337.png).
