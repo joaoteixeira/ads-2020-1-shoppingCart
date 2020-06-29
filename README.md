@@ -11,7 +11,7 @@
 - [x] Cadastro de produto com valor, descrição e imagem;
 - [x] Adicionar produto ao carrinho do usuário com a quantidade;
 - [ ] Remover produto do carrinho do usuário;
-- [ ] Finalizar carrinho.
+- [x] Finalizar carrinho.
 
 ## Diagramas do banco de dados:
 
